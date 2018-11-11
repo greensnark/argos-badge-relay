@@ -1,4 +1,4 @@
 #! /bin/sh
 
-( cat ~/.config/argos/.notifications; echo "·" ) | perl -ne 'print if /\S/'
+( cat ~/.config/argos/.notifications; echo "·" ) | perl -ne 'if (/\S/) { print; exit }'
 echo ---
