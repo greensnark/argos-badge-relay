@@ -186,7 +186,7 @@ func (s *ArgosNotificationServer) writeNotificationTempFile(status string) (tmpF
 	}
 	defer statusFH.Close()
 
-	_, err = statusFH.WriteString(status)
+	_, err = fmt.Fprintln(statusFH, status)
 	return tmpFilePath, err
 }
 
